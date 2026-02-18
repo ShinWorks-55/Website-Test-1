@@ -4,317 +4,158 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>David Shin — Actor</title>
-  <meta name="description" content="David Shin — Actor. Reel, credits, resume, and contact." />
+  <meta name="description" content="David Shin — Acting portfolio. Photos, reel, and contact." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Premium, modern, big-readable -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Ambient background -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__grain"></div>
-    <div class="bg__orb bg__orb--a"></div>
-    <div class="bg__orb bg__orb--b"></div>
-    <div class="bg__orb bg__orb--c"></div>
-  </div>
+  <!-- Smooth color wash behind everything -->
+  <div class="wash" aria-hidden="true"></div>
 
-  <!-- Top bar -->
+  <!-- Top nav (tabs will be real pages later) -->
   <header class="topbar">
     <div class="wrap topbar__inner">
-      <a class="brand" href="#top" aria-label="David Shin Home">
+      <a class="brand" href="#top" aria-label="Home">
         <span class="brand__mark" aria-hidden="true"></span>
         <span class="brand__text">David Shin</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#work">Resume</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="resume.html" class="nav__link">Resume</a>
+        <a href="contact.html" class="nav__link">Contact</a>
       </nav>
 
-      <a class="btn btn--small" href="#contact">Inquire</a>
+      <a class="pill" href="contact.html">Inquire</a>
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top" class="wrap">
-    <section class="hero" data-reveal>
-      <div class="hero__left">
+    <!-- SECTION 1: BRIGHT -->
+    <section class="section section--hero"
+      data-theme="brightA"
+      data-reveal-group
+      aria-label="Featured headshot and gallery">
+
+      <div class="section__header" data-reveal>
         <p class="kicker">ACTOR • FILM / TV / STAGE</p>
-        <h1 class="title">
-          Premium presence.<br />
-          Simple. Bold.<br />
-          Casting-friendly.
-        </h1>
-
-        <p class="lead">
-          I’m David Shin — an actor focused on grounded truth and sharp clarity.
-          This is a fast, modern portfolio: reel, credits, and a clean contact.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn" href="#work">View Resume</a>
-          <a class="btn btn--ghost" href="#reel">Watch Reel</a>
-        </div>
-
-        <div class="hero__meta">
-          <div class="chip">
-            <div class="chip__label">Based</div>
-            <div class="chip__value">Los Angeles</div>
-          </div>
-          <div class="chip">
-            <div class="chip__label">Union</div>
-            <div class="chip__value">SAG-AFTRA (if applicable)</div>
-          </div>
-          <div class="chip">
-            <div class="chip__label">Email</div>
-            <div class="chip__value">yourname@email.com</div>
-          </div>
-        </div>
+        <h1 class="title">A premium photo-first portfolio.</h1>
+        <p class="sub">Scroll.</p>
       </div>
 
-      <aside class="hero__right" data-parallax="0.35">
-        <!-- Swap this with your headshot image -->
-        <div class="portrait" role="img" aria-label="Headshot placeholder">
-          <div class="portrait__frame"></div>
-          <div class="portrait__hint">
-            <strong>HEADSHOT</strong>
-            <span>Drop in: /assets/headshot.jpg</span>
-          </div>
-        </div>
+      <div class="collage collage--hero">
+        <!-- Main headshot -->
+        <figure class="shot shot--main" data-reveal data-tilt>
+          <img src="assets/headshot_main.jpg" alt="David Shin headshot" loading="eager">
+          <figcaption class="cap cap--glass">
+            <span class="cap__big">David Shin</span>
+            <span class="cap__small">Actor</span>
+          </figcaption>
+        </figure>
 
-        <div class="mini">
-          <div class="mini__row">
-            <span class="mini__dot"></span>
-            <span class="mini__text">Available for auditions</span>
-          </div>
-          <div class="mini__row">
-            <span class="mini__dot"></span>
-            <span class="mini__text">Reel + Resume on one scroll</span>
-          </div>
-        </div>
-      </aside>
-    </section>
+        <!-- Four aesthetic photos -->
+        <figure class="shot shot--a" data-reveal>
+          <img src="assets/light_01.jpg" alt="Acting photo 1" loading="lazy">
+        </figure>
 
-    <!-- REEL -->
-    <section id="reel" class="panel" data-reveal>
-      <div class="panel__head">
-        <h2 class="h2">Reel</h2>
-        <p class="sub">One click. No hunting. Keep it easy for casting.</p>
+        <figure class="shot shot--b" data-reveal>
+          <img src="assets/light_02.jpg" alt="Acting photo 2" loading="lazy">
+        </figure>
+
+        <figure class="shot shot--c" data-reveal>
+          <img src="assets/light_03.jpg" alt="Acting photo 3" loading="lazy">
+        </figure>
+
+        <figure class="shot shot--d" data-reveal>
+          <img src="assets/light_04.jpg" alt="Acting photo 4" loading="lazy">
+        </figure>
       </div>
 
-      <div class="reel" data-parallax="0.18">
-        <!-- Replace the src with your YouTube/Vimeo embed -->
-        <div class="reel__embed">
-          <div class="reel__placeholder">
-            <p class="reel__big">Embed your reel here</p>
-            <p class="reel__small">Replace this box with a YouTube/Vimeo iframe.</p>
-          </div>
-          <!-- Example iframe (uncomment and replace):
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="David Shin Acting Reel"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-          -->
-        </div>
-
-        <div class="reel__side">
-          <div class="card">
-            <h3 class="h3">Highlight</h3>
-            <p class="text">
-              A 1–2 sentence pitch: type + energy + what you book.
-              Keep it direct. Clean. Confident.
-            </p>
-          </div>
-          <div class="card">
-            <h3 class="h3">Links</h3>
-            <ul class="linklist">
-              <li><a href="#" aria-label="IMDb link">IMDb</a></li>
-              <li><a href="#" aria-label="Actors Access link">Actors Access</a></li>
-              <li><a href="#" aria-label="Instagram link">Instagram</a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="micro" data-reveal>
+        <span class="micro__dot" aria-hidden="true"></span>
+        <span class="micro__text">More photos than words. Full info in tabs.</span>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="panel" data-reveal>
-      <div class="panel__head">
-        <h2 class="h2">About</h2>
-        <p class="sub">Big type, tight sentences. Premium doesn’t ramble.</p>
+    <!-- SECTION 2: DARK -->
+    <section class="section section--dark"
+      data-theme="dark"
+      data-reveal-group
+      aria-label="Theatre scene and darker character work">
+
+      <div class="section__header" data-reveal>
+        <h2 class="h2">Theatre & darker work</h2>
+        <p class="sub">Mood shifts. The site shifts with it.</p>
       </div>
 
-      <div class="about">
-        <div class="card about__bio" data-parallax="0.12">
-          <p class="bio">
-            David Shin is a Los Angeles-based actor working across stage and screen.
-            His work leans into clarity, tension, and humor that lands like truth.
-          </p>
-          <p class="bio bio--muted">
-            Replace this bio with yours. Aim: 5–7 lines that feel like a brand.
-          </p>
-        </div>
+      <!-- One large theatre background w/ blurred edges -->
+      <div class="theatre" data-reveal>
+        <img class="theatre__img" src="assets/theatre_bg.jpg" alt="Theatre image with subject centered" loading="lazy">
+        <div class="theatre__blur theatre__blur--top" aria-hidden="true"></div>
+        <div class="theatre__blur theatre__blur--bottom" aria-hidden="true"></div>
 
-        <div class="about__facts">
-          <div class="card">
-            <h3 class="h3">Stats</h3>
-            <ul class="facts">
-              <li><span>Height</span><span>(add)</span></li>
-              <li><span>Hair / Eyes</span><span>(add)</span></li>
-              <li><span>Playing Age</span><span>(add)</span></li>
-              <li><span>Local Hire</span><span>LA</span></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3 class="h3">Skills</h3>
-            <ul class="facts">
-              <li><span>Languages</span><span>(add)</span></li>
-              <li><span>Dialects</span><span>(add)</span></li>
-              <li><span>Special Skills</span><span>(add)</span></li>
-              <li><span>Combat / Dance</span><span>(add)</span></li>
-            </ul>
-          </div>
+        <div class="theatre__label">
+          <span class="theatre__tag">FEATURE</span>
+          <span class="theatre__line">Stage presence • silhouette • story</span>
         </div>
+      </div>
+
+      <!-- 3 darker character photos -->
+      <div class="collage collage--dark">
+        <figure class="shot shot--dark1" data-reveal>
+          <img src="assets/dark_01.jpg" alt="Dark character photo 1" loading="lazy">
+        </figure>
+
+        <figure class="shot shot--dark2" data-reveal>
+          <img src="assets/dark_02.jpg" alt="Dark character photo 2" loading="lazy">
+        </figure>
+
+        <figure class="shot shot--dark3" data-reveal>
+          <img src="assets/dark_03.jpg" alt="Dark character photo 3" loading="lazy">
+        </figure>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section id="work" class="panel" data-reveal>
-      <div class="panel__head">
-        <h2 class="h2">Resume</h2>
-        <p class="sub">Make it skimmable. The page does the heavy lifting.</p>
+    <!-- SECTION 3: BRIGHT (different palette) -->
+    <section class="section section--brightB"
+      data-theme="brightB"
+      data-reveal-group
+      aria-label="Joyful comedic work">
+
+      <div class="section__header" data-reveal>
+        <h2 class="h2">Joy / comedy</h2>
+        <p class="sub">New bright palette. Lighter energy.</p>
       </div>
 
-      <div class="resume">
-        <div class="card resume__col" data-parallax="0.10">
-          <h3 class="h3">Selected Credits</h3>
-          <div class="rows">
-            <div class="row">
-              <div class="row__main"><strong>Role</strong> — Project</div>
-              <div class="row__meta">Director • Venue • Year</div>
-            </div>
-            <div class="row">
-              <div class="row__main"><strong>Role</strong> — Project</div>
-              <div class="row__meta">Director • Venue • Year</div>
-            </div>
-            <div class="row">
-              <div class="row__main"><strong>Role</strong> — Project</div>
-              <div class="row__meta">Director • Venue • Year</div>
-            </div>
-          </div>
+      <div class="collage collage--final">
+        <figure class="shot shot--fun1" data-reveal>
+          <img src="assets/fun_01.jpg" alt="Comedic photo 1" loading="lazy">
+        </figure>
 
-          <div class="resume__actions">
-            <!-- Upload a PDF named DavidShin_Resume.pdf to your repo -->
-            <a class="btn" href="DavidShin_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
-            <a class="btn btn--ghost" href="#contact">Book / Inquire</a>
-          </div>
-        </div>
+        <figure class="shot shot--fun2" data-reveal>
+          <img src="assets/fun_02.jpg" alt="Comedic photo 2" loading="lazy">
+        </figure>
 
-        <div class="card resume__col">
-          <h3 class="h3">Training</h3>
-          <div class="rows">
-            <div class="row">
-              <div class="row__main"><strong>Studio / Program</strong></div>
-              <div class="row__meta">Teacher • Focus</div>
-            </div>
-            <div class="row">
-              <div class="row__main"><strong>On-Camera</strong></div>
-              <div class="row__meta">Teacher • Scene Study</div>
-            </div>
-            <div class="row">
-              <div class="row__main"><strong>Voice / Movement</strong></div>
-              <div class="row__meta">Teacher • Method</div>
-            </div>
-          </div>
-
-          <hr class="hr" />
-
-          <h3 class="h3">Press / Awards</h3>
-          <div class="rows">
-            <div class="row">
-              <div class="row__main"><strong>Award / Recognition</strong></div>
-              <div class="row__meta">Org • Year</div>
-            </div>
-            <div class="row">
-              <div class="row__main"><strong>Festival / Feature</strong></div>
-              <div class="row__meta">Outlet • Year</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="panel panel--last" data-reveal>
-      <div class="panel__head">
-        <h2 class="h2">Contact</h2>
-        <p class="sub">Direct. Easy. Professional.</p>
+        <figure class="shot shot--fun3" data-reveal>
+          <img src="assets/fun_03.jpg" alt="Comedic photo 3" loading="lazy">
+        </figure>
       </div>
 
-      <div class="contact">
-        <div class="card contact__left" data-parallax="0.08">
-          <h3 class="h3">Direct</h3>
-          <p class="text">
-            Replace the email + links. If you have rep, put it here too.
-          </p>
-          <ul class="linklist linklist--big">
-            <li><a href="mailto:yourname@email.com">yourname@email.com</a></li>
-            <li><a href="#" aria-label="IMDb link">IMDb</a></li>
-            <li><a href="#" aria-label="Actors Access link">Actors Access</a></li>
-          </ul>
-
-          <div class="note">
-            Tip: casting loves a one-click email + reel + PDF resume.
-          </div>
-        </div>
-
-        <div class="card contact__right">
-          <h3 class="h3">Message</h3>
-
-          <!-- Formspree: replace /f/yourFormID after you create it -->
-          <form class="form" action="https://formspree.io/f/yourFormID" method="POST">
-            <label class="field">
-              <span>Name</span>
-              <input name="name" type="text" placeholder="Your name" required />
-            </label>
-
-            <label class="field">
-              <span>Email</span>
-              <input name="email" type="email" placeholder="you@email.com" required />
-            </label>
-
-            <label class="field">
-              <span>Message</span>
-              <textarea name="message" placeholder="What are you casting?" required></textarea>
-            </label>
-
-            <button class="btn btn--full" type="submit">Send</button>
-
-            <p class="fineprint">
-              To enable this: make a Formspree form and replace <strong>yourFormID</strong>.
-              Or delete the form and keep email only.
-            </p>
-          </form>
-        </div>
+      <div class="footerline" data-reveal>
+        <a class="pill pill--ghost" href="resume.html">Resume</a>
+        <a class="pill" href="contact.html">Contact</a>
       </div>
-    </section>
 
-    <footer class="footer">
-      <div class="footer__inner">
+      <footer class="footer" data-reveal>
         <span>© <span id="year"></span> David Shin</span>
-        <a href="#top" class="toTop" aria-label="Back to top">Back to top ↑</a>
-      </div>
-    </footer>
+        <a class="toTop" href="#top">Back to top ↑</a>
+      </footer>
+    </section>
   </main>
 
   <script src="script.js"></script>
