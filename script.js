@@ -2,47 +2,65 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /**
- * THEMES
- * brightA: airy, premium (sky + warm lemon)
- * dark: deep, cinematic (charcoal + violet/teal wash)
- * brightB: joyful, premium (soft coral + mint)
+ * THEMES (all bright, no black):
+ * brightA: white + sea blue
+ * drama: rich violet + crimson (still bright, premium)
+ * brightB: pink + soft orange accent
  */
 const THEMES = {
   brightA: {
-    bg1: "#f8fbff",
-    bg2: "#eef6ff",
-    ink: "#0b0e14",
-    muted: "rgba(11,14,20,.65)",
-    accent: "#1aa6ff",
-    accent2: "#ffcf55",
-    line: "rgba(11,14,20,.10)",
-    topbar: "rgba(255,255,255,.35)",
-    topbarBorder: "rgba(0,0,0,.06)",
-    wash: "var(--washA)",
+    bg1: "#fbfdff",
+    bg2: "#eef8ff",
+    ink: "#0b1020",
+    muted: "rgba(11,16,32,.62)",
+    accent: "#1a84ff",
+    accent2: "#00c2ff",
+    line: "rgba(11,16,32,.10)",
+    topbar: "rgba(251,253,255,.55)",
+    topbarBorder: "rgba(11,16,32,.08)",
+    wash: `
+      radial-gradient(1100px 720px at 18% 14%, rgba(0,194,255,.28), transparent 58%),
+      radial-gradient(900px 620px at 86% 26%, rgba(26,132,255,.20), transparent 60%),
+      linear-gradient(180deg, #fbfdff, #eef8ff)
+    `
   },
-  dark: {
-    bg1: "#06070b",
-    bg2: "#0b0f16",
-    ink: "#f4f5fb",
-    muted: "rgba(244,245,251,.70)",
-    accent: "#7a5cff",
-    accent2: "#00ffd0",
-    line: "rgba(255,255,255,.12)",
-    topbar: "rgba(6,7,11,.45)",
-    topbarBorder: "rgba(255,255,255,.10)",
-    wash: "var(--washDark)",
+
+  drama: {
+    // violet + crimson, still luminous
+    bg1: "#fff9ff",
+    bg2: "#fff1f6",
+    ink: "#1a0b1e",
+    muted: "rgba(26,11,30,.62)",
+    accent: "#7c3cff",  // violet
+    accent2: "#ff2e5f", // crimson
+    line: "rgba(26,11,30,.12)",
+    topbar: "rgba(255,249,255,.50)",
+    topbarBorder: "rgba(26,11,30,.10)",
+    wash: `
+      radial-gradient(1000px 680px at 20% 18%, rgba(124,60,255,.26), transparent 60%),
+      radial-gradient(900px 620px at 85% 30%, rgba(255,46,95,.22), transparent 60%),
+      radial-gradient(700px 520px at 55% 70%, rgba(255,46,95,.10), transparent 60%),
+      linear-gradient(180deg, #fff9ff, #fff1f6)
+    `
   },
+
   brightB: {
-    bg1: "#fff8fb",
-    bg2: "#f6fff8",
-    ink: "#111018",
-    muted: "rgba(17,16,24,.62)",
-    accent: "#ff4da6",
-    accent2: "#46f0b5",
-    line: "rgba(17,16,24,.12)",
-    topbar: "rgba(255,255,255,.35)",
-    topbarBorder: "rgba(0,0,0,.06)",
-    wash: "var(--washB)",
+    // pink + small draft of orange
+    bg1: "#fff7fb",
+    bg2: "#fff6ee",
+    ink: "#1b1020",
+    muted: "rgba(27,16,32,.60)",
+    accent: "#ff3ea5",  // pink
+    accent2: "#ff8a3d", // orange
+    line: "rgba(27,16,32,.12)",
+    topbar: "rgba(255,247,251,.55)",
+    topbarBorder: "rgba(27,16,32,.10)",
+    wash: `
+      radial-gradient(1050px 700px at 20% 18%, rgba(255,62,165,.24), transparent 60%),
+      radial-gradient(920px 640px at 86% 28%, rgba(255,138,61,.18), transparent 62%),
+      radial-gradient(700px 520px at 50% 70%, rgba(255,138,61,.08), transparent 60%),
+      linear-gradient(180deg, #fff7fb, #fff6ee)
+    `
   }
 };
 
@@ -61,20 +79,15 @@ function applyTheme(key){
   root.style.setProperty("--accent2", t.accent2);
   root.style.setProperty("--line", t.line);
 
-  // wash background (can accept CSS var strings)
   washEl.style.background = t.wash;
 
-  // topbar adapts for dark
   topbar.style.background = t.topbar;
   topbar.style.borderBottomColor = t.topbarBorder;
-
-  // body color updates automatically via CSS vars
 }
 
 // Scroll-based theme switching
 const themedSections = document.querySelectorAll("[data-theme]");
 const themeObserver = new IntersectionObserver((entries) => {
-  // pick the most visible section
   const visible = entries
     .filter(e => e.isIntersecting)
     .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
